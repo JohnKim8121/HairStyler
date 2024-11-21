@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="bg-gray-100">
+    <ActionBar title="HairStyle Explorer" class="bg-purple-600 text-white" flat="true" />
+    
+    <ScrollView>
+        <StackLayout class="p-4">
+            <!-- Welcome Card -->
+            <StackLayout class="bg-white rounded-lg p-4 m-2 shadow">
+                <Label text="Welcome to HairStyle Explorer" class="text-2xl font-bold text-gray-800" />
+                <Label text="Discover your perfect hairstyle using AI" class="text-lg text-gray-600" textWrap="true" />
+            </StackLayout>
+
+            <!-- Main Actions -->
+            <GridLayout rows="auto, auto" columns="*, *" class="mt-4">
+                <!-- Camera/Analysis -->
+                <StackLayout tap="{{ onAnalyze }}" col="0" row="0" class="bg-white rounded-lg p-4 m-2 shadow">
+                    <Label text="📸" class="text-4xl text-center" />
+                    <Label text="Analyze My Hair" class="text-center font-bold" />
+                </StackLayout>
+
+                <!-- Try Styles -->
+                <StackLayout tap="{{ onTryStyles }}" col="1" row="0" class="bg-white rounded-lg p-4 m-2 shadow">
+                    <Label text="💇" class="text-4xl text-center" />
+                    <Label text="Try Hairstyles" class="text-center font-bold" />
+                </StackLayout>
+
+                <!-- Tutorials -->
+                <StackLayout tap="{{ onTutorials }}" col="0" row="1" class="bg-white rounded-lg p-4 m-2 shadow">
+                    <Label text="📹" class="text-4xl text-center" />
+                    <Label text="AR Tutorials" class="text-center font-bold" />
+                </StackLayout>
+
+                <!-- My Profile -->
+                <StackLayout tap="{{ onProfile }}" col="1" row="1" class="bg-white rounded-lg p-4 m-2 shadow">
+                    <Label text="👤" class="text-4xl text-center" />
+                    <Label text="My Profile" class="text-center font-bold" />
+                </StackLayout>
+            </GridLayout>
+
+            <!-- Featured Styles -->
+            <Label text="Featured Styles" class="text-xl font-bold mt-6 mb-2 text-gray-800" />
+            <ScrollView orientation="horizontal" class="mb-4">
+                <StackLayout orientation="horizontal">
+                    <Repeater items="{{ featuredStyles }}">
+                        <Repeater.itemTemplate>
+                            <StackLayout class="bg-white rounded-lg mr-2 shadow" width="150">
+                                <Image src="{{ image }}" height="150" stretch="aspectFill" class="rounded-t-lg" />
+                                <Label text="{{ name }}" class="p-2 font-bold text-center" />
+                            </StackLayout>
+                        </Repeater.itemTemplate>
+                    </Repeater>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ScrollView>
+</Page>

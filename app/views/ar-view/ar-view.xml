@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="AR Try-On" class="bg-purple-600 text-white">
+        <NavigationButton text="Back" android.systemIcon="ic_menu_back" />
+    </ActionBar>
+
+    <GridLayout rows="*, auto">
+        <!-- AR Camera Preview -->
+        <ContentView row="0" id="arView" class="ar-view">
+            <!-- AR content will be added programmatically -->
+        </ContentView>
+
+        <!-- Controls -->
+        <GridLayout row="1" columns="*, *, *" rows="auto" class="bg-white p-4">
+            <Button col="0" text="Length" tap="{{ adjustLength }}" class="bg-purple-600 text-white rounded m-1" />
+            <Button col="1" text="Color" tap="{{ adjustColor }}" class="bg-purple-600 text-white rounded m-1" />
+            <Button col="2" text="Style" tap="{{ adjustStyle }}" class="bg-purple-600 text-white rounded m-1" />
+        </GridLayout>
+    </GridLayout>
+</Page>

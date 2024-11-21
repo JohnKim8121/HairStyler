@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+Page {
+    background-color: #f3f4f6;
+}
+
+ActionBar {
+    background-color: #7c3aed;
+    color: white;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px;
+    shadow-color: #000;
+    shadow-offset: 0 1px;
+    shadow-opacity: 0.2;
+    shadow-radius: 3px;
+}

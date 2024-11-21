@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="AR Tutorial" class="bg-purple-600 text-white">
+        <NavigationButton text="Back" android.systemIcon="ic_menu_back" />
+    </ActionBar>
+
+    <GridLayout rows="*, auto">
+        <!-- Tutorial AR View -->
+        <ContentView row="0" id="tutorialView">
+            <!-- AR overlay will be added here -->
+        </ContentView>
+
+        <!-- Tutorial Controls -->
+        <StackLayout row="1" class="bg-white p-4">
+            <Label text="{{ currentStep }}" class="text-lg font-bold text-center" textWrap="true" />
+            <Progress value="{{ progress }}" maxValue="100" class="m-2" />
+            <GridLayout columns="*, *" class="mt-2">
+                <Button col="0" text="Previous" tap="{{ previousStep }}" 
+                    class="bg-gray-500 text-white rounded m-1" isEnabled="{{ canGoPrevious }}" />
+                <Button col="1" text="{{ isLastStep ? 'Finish' : 'Next' }}" tap="{{ nextStep }}" 
+                    class="bg-purple-600 text-white rounded m-1" />
+            </GridLayout>
+        </StackLayout>
+    </GridLayout>
+</Page>

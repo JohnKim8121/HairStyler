@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<GridLayout rows="*, auto" class="style-card bg-white rounded-lg shadow m-2" height="200">
+    <Image row="0" src="{{ imageUrl }}" stretch="aspectFill" class="rounded-t-lg" />
+    <StackLayout row="1" class="p-2">
+        <Label text="{{ name }}" class="font-bold text-lg" />
+        <Label text="{{ description }}" class="text-gray-600 text-sm" textWrap="true" />
+        <Button text="Try On" tap="{{ onTryOn }}" class="bg-purple-600 text-white rounded-full px-4 py-2 mt-2" />
+    </StackLayout>
+</GridLayout>
